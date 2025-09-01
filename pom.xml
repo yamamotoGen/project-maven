@@ -77,7 +77,7 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.3.0</version>
                 <configuration>
-                    <arhive>
+                    <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
@@ -85,16 +85,9 @@
                         </manifest>
                         <manifestEntries>
                             <Rsrc-Main-Class>com.javarush.games.racer.RacerGame</Rsrc-Main-Class>
-                            <Rsrc-Class-Path>./</Rsrc-Class-Path>
-                            <Class-Path>
-                                lib/commons-lang3-3.12.0.jar
-                                lib/javafx-controls-18.0.1.jar
-                                lib/desktop-game-engine-1.0.jar
-                                lib/javafx-base-18.0.1.jar
-                                lib/javafx-graphics-18.0.1.jar
-                            </Class-Path>
+                            <Class-Path>./</Class-Path>
                         </manifestEntries>
-                    </arhive>
+                    </archive>
                 </configuration>
             </plugin>
 
@@ -116,7 +109,7 @@
                 <executions>
                     <execution>
                         <id>copy-dependencies</id>
-                        <phase>prepare-package</phase>
+                        <phase>generate-resources</phase>
                         <goals>
                             <goal>copy-dependencies</goal>
                         </goals>
